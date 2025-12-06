@@ -61,7 +61,7 @@
       background: #16c5ff;
     }
 
-    /* ===== Navbar + Logo ===== */
+    /* ===== Navbar ===== */
     .nav {
       display: flex;
       align-items: center;
@@ -75,43 +75,19 @@
       gap: 10px;
     }
 
-    /* الشعار الجديد SE نيون جradient */
     .logo-mark {
-      width: 48px;
-      height: 48px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 30% 20%, #ffffff 0, #fdfbff 10%, #a96bff 40%, #2b154f 75%, #05030f 100%);
+      width: 38px;
+      height: 38px;
+      border-radius: 13px;
+      background: radial-gradient(circle at 20% 20%, #ffffff 0, #f5f5ff 8%, #7b5bff 55%, #2b1b57 100%);
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow:
-        0 0 20px rgba(160, 120, 255, 0.9),
-        0 0 46px rgba(79, 213, 255, 0.55);
-      border: 1px solid rgba(195, 220, 255, 0.9);
-      position: relative;
-      overflow: hidden;
-      animation: float 4s ease-in-out infinite;
-    }
-
-    .logo-mark::after {
-      content: "";
-      position: absolute;
-      inset: -10%;
-      background: radial-gradient(circle at 0 0, rgba(255, 255, 255, 0.35), transparent 55%);
-      opacity: 0.7;
-      pointer-events: none;
-    }
-
-    .logo-se {
-      position: relative;
-      z-index: 1;
       font-weight: 800;
-      font-size: 20px;
-      letter-spacing: -1px;
-      background: linear-gradient(135deg, #f9fbff, #e4f5ff, #ffbbff);
-      -webkit-background-clip: text;
-      color: transparent;
-      text-shadow: 0 0 7px rgba(255, 255, 255, 0.75);
+      font-size: 18px;
+      color: #140322;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.55);
+      animation: float 4s ease-in-out infinite;
     }
 
     .logo-text {
@@ -611,9 +587,7 @@
     <!-- ===== Navbar ===== -->
     <header class="nav">
       <div class="logo">
-        <div class="logo-mark">
-          <span class="logo-se">SE</span>
-        </div>
+        <div class="logo-mark">SE</div>
         <div class="logo-text">Solution Engine</div>
       </div>
       <nav class="nav-links">
@@ -674,8 +648,9 @@
 
           <div class="hero-card-body">
             <div class="qr-card">
-              <!-- لما تجهّز صورة QR حقيقية، احفظها باسم qr.png وارفعها مع index.html
-                   ثم استبدل النص "QR Code" بالسطر التالي:
+              <!-- ملاحظة:
+                   - لما تجهّز صورة QR حقيقية، احفظها باسم qr.png وارفعها مع index.html
+                   - ثم استبدل النص "QR Code" بالسطر التالي:
                    <img src="qr.png" alt="QR Code للتسجيل المبكر" />
               -->
               QR Code
