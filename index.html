@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <title>Solution Engine - عقلك الرقمي لليوم</title>
+  <title>Solution Engine - عقلك الرقمي لليوم | Your Digital Brain for Today</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <!-- خط فخم -->
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -16,7 +16,7 @@
 
     body {
       font-family: "Cairo", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #472980 0, #050616 40%, #02010a 100%);
+      background: radial-gradient(circle at top, #203a88 0, #050616 40%, #02010a 100%);
       color: #ffffff;
       min-height: 100vh;
     }
@@ -32,7 +32,7 @@
       padding: 24px 16px 60px;
     }
 
-    /* ===== تأثير لمعان خفيف في الخلفية ===== */
+    /* ===== Glow Background ===== */
     .glow {
       position: fixed;
       inset: 0;
@@ -53,7 +53,7 @@
     .glow::before {
       top: -60px;
       left: -40px;
-      background: #7f5bff;
+      background: #3f7dff;
     }
     .glow::after {
       bottom: -120px;
@@ -61,7 +61,7 @@
       background: #16c5ff;
     }
 
-    /* ===== Navbar ===== */
+    /* ===== Navbar + Logo ===== */
     .nav {
       display: flex;
       align-items: center;
@@ -75,19 +75,43 @@
       gap: 10px;
     }
 
+    /* شعار أزرق نيون */
     .logo-mark {
-      width: 38px;
-      height: 38px;
-      border-radius: 13px;
-      background: radial-gradient(circle at 20% 20%, #ffffff 0, #f5f5ff 8%, #7b5bff 55%, #2b1b57 100%);
+      width: 48px;
+      height: 48px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 20%, #ffffff 0, #f5fbff 12%, #3fa9ff 45%, #0f2855 80%, #030713 100%);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: 800;
-      font-size: 18px;
-      color: #140322;
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.55);
+      box-shadow:
+        0 0 20px rgba(79, 180, 255, 0.9),
+        0 0 40px rgba(79, 213, 255, 0.55);
+      border: 1px solid rgba(190, 220, 255, 0.9);
+      position: relative;
+      overflow: hidden;
       animation: float 4s ease-in-out infinite;
+    }
+
+    .logo-mark::after {
+      content: "";
+      position: absolute;
+      inset: -10%;
+      background: radial-gradient(circle at 0 0, rgba(255, 255, 255, 0.32), transparent 60%);
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    .logo-se {
+      position: relative;
+      z-index: 1;
+      font-weight: 800;
+      font-size: 20px;
+      letter-spacing: -1px;
+      background: linear-gradient(135deg, #f9fbff, #dff4ff);
+      -webkit-background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 7px rgba(255, 255, 255, 0.85);
     }
 
     .logo-text {
@@ -121,7 +145,7 @@
       width: 0;
       height: 2px;
       border-radius: 999px;
-      background: linear-gradient(90deg, #25b5ff, #c471ff);
+      background: linear-gradient(90deg, #25b5ff, #5bd0ff);
       transition: width 0.2s ease-out;
     }
 
@@ -160,21 +184,27 @@
     }
 
     .hero-title {
-      font-size: 32px;
+      font-size: 30px;
       font-weight: 800;
-      margin-bottom: 8px;
+      margin-bottom: 4px;
     }
 
     .hero-title span {
-      background: linear-gradient(135deg, #42d3ff, #ff9bff);
+      background: linear-gradient(135deg, #42d3ff, #7fd3ff);
       -webkit-background-clip: text;
       color: transparent;
     }
 
     .hero-subtitle {
       font-size: 15px;
-      margin-bottom: 14px;
+      margin-bottom: 6px;
       color: #dde6ff;
+    }
+
+    .hero-subtitle-en {
+      font-size: 13px;
+      margin-bottom: 14px;
+      color: #bcd5ff;
     }
 
     .hero-lead {
@@ -224,7 +254,7 @@
     }
 
     .action-btn.primary {
-      background: linear-gradient(135deg, #25b5ff, #7a5cff);
+      background: linear-gradient(135deg, #25b5ff, #3f8bff);
       border: none;
       box-shadow: 0 10px 24px rgba(0, 0, 0, 0.6);
       font-weight: 600;
@@ -241,7 +271,7 @@
     }
 
     .action-btn.primary:hover {
-      background: linear-gradient(135deg, #35caff, #8b6cff);
+      background: linear-gradient(135deg, #35caff, #4b97ff);
     }
 
     /* ===== Hero Right (QR + Card) ===== */
@@ -363,6 +393,13 @@
     .section-title {
       font-size: 20px;
       font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .section-title-en {
+      font-size: 14px;
+      font-weight: 500;
+      color: #c3d4ff;
       margin-bottom: 4px;
     }
 
@@ -455,30 +492,42 @@
       line-height: 1.7;
     }
 
-    /* ===== Form ===== */
+    /* ===== Form (Expanded + Bilingual) ===== */
     .form-card {
       background: linear-gradient(145deg, rgba(6, 9, 32, 0.98), rgba(15, 24, 58, 0.98));
       border-radius: 18px;
       padding: 18px 18px 16px;
       border: 1px solid rgba(99, 167, 248, 0.9);
-      max-width: 540px;
+      max-width: 720px;
       margin: 0 auto;
       box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7);
     }
 
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 12px 16px;
+    }
+
     .form-row {
-      margin-bottom: 12px;
       text-align: right;
     }
 
     .form-label {
       display: block;
-      font-size: 13px;
+      font-size: 12px;
       margin-bottom: 3px;
+      color: #e4ebff;
+    }
+
+    .label-en {
+      font-size: 11px;
+      color: #9fb0d8;
     }
 
     .form-input,
-    .form-textarea {
+    .form-textarea,
+    .form-select {
       width: 100%;
       padding: 8px 10px;
       border-radius: 9px;
@@ -491,7 +540,8 @@
     }
 
     .form-input:focus,
-    .form-textarea:focus {
+    .form-textarea:focus,
+    .form-select:focus {
       border-color: #47bfff;
       box-shadow: 0 0 0 1px rgba(71, 191, 255, 0.3);
       background: #050b21;
@@ -505,16 +555,35 @@
     .form-note {
       font-size: 11px;
       color: #9da9d8;
-      margin-top: 2px;
+      margin-top: 6px;
+    }
+
+    .form-footer-row {
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .checkbox-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      font-size: 11px;
+      color: #c9d4ff;
+    }
+
+    .checkbox-row input {
+      margin-top: 3px;
     }
 
     .form-submit {
-      margin-top: 10px;
+      margin-top: 4px;
       width: 100%;
       padding: 10px;
       border-radius: 999px;
       border: none;
-      background: linear-gradient(135deg, #2ad0ff, #8e6bff);
+      background: linear-gradient(135deg, #2ad0ff, #3f8bff);
       color: #ffffff;
       font-weight: 700;
       font-size: 14px;
@@ -527,6 +596,68 @@
       opacity: 0.95;
       transform: translateY(-1px);
       box-shadow: 0 14px 36px rgba(0, 0, 0, 0.75);
+    }
+
+    /* ===== Community & Updates Sections ===== */
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+      font-size: 12px;
+      color: #d5e0ff;
+    }
+
+    .pill-tag {
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(116, 190, 255, 0.6);
+      background: rgba(6, 18, 56, 0.9);
+    }
+
+    /* ===== Popup ===== */
+    .popup-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 50;
+    }
+
+    .popup {
+      background: #050819;
+      border-radius: 16px;
+      padding: 18px 20px;
+      border: 1px solid #3b76ff;
+      max-width: 320px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.85);
+    }
+
+    .popup-title {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .popup-text {
+      font-size: 13px;
+      color: #d0dcff;
+      margin-bottom: 12px;
+    }
+
+    .popup-btn {
+      padding: 8px 16px;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(135deg, #2ad0ff, #3f8bff);
+      color: #ffffff;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 600;
     }
 
     /* ===== Footer ===== */
@@ -554,7 +685,6 @@
       }
       .hero-text-block {
         order: 2;
-        text-align: right;
       }
       .hero-right {
         order: 1;
@@ -583,17 +713,32 @@
 <body>
   <div class="glow"></div>
 
+  <!-- Popup شكر -->
+  <div class="popup-backdrop" id="thankPopup">
+    <div class="popup">
+      <div class="popup-title">شكراً لتسجيلك! 💙</div>
+      <div class="popup-text">
+        تم استلام طلبك بنجاح.<br/>
+        Thank you for joining the early access list.
+      </div>
+      <button type="button" class="popup-btn" id="closePopupBtn">إغلاق / Close</button>
+    </div>
+  </div>
+
   <div class="page">
     <!-- ===== Navbar ===== -->
     <header class="nav">
       <div class="logo">
-        <div class="logo-mark">SE</div>
+        <div class="logo-mark">
+          <span class="logo-se">SE</span>
+        </div>
         <div class="logo-text">Solution Engine</div>
       </div>
       <nav class="nav-links">
-        <a href="#about">عن الفكرة</a>
-        <a href="#how">كيف يعمل؟</a>
-        <a href="#join">سجّل اهتمامك</a>
+        <a href="#about">عن الفكرة / About</a>
+        <a href="#community">المجتمع / Community</a>
+        <a href="#updates">التحديثات / Updates</a>
+        <a href="#join">التسجيل / Sign up</a>
       </nav>
     </header>
 
@@ -602,13 +747,17 @@
       <!-- نص -->
       <div class="hero-text-block">
         <div class="hero-badge">
-          <span>⚡</span> جيل جديد من التوجيه الذاتي
+          <span>⚡</span> جيل جديد من التوجيه الذاتي · A new era of self-guidance
         </div>
         <h1 class="hero-title">
           عقلك الرقمي لليوم، <span>مش لكل الناس</span>.
         </h1>
         <p class="hero-subtitle">
-          Solution Engine مش مجرد AI… هو مخ رقمي صغير بيفهم يومك ويعطيك خطوة مناسبة إلك أنت.
+          Solution Engine مش مجرد ذكاء اصطناعي… هو مخ رقمي صغير بيفهم يومك ويعطيك خطوة مناسبة إلك.
+        </p>
+        <p class="hero-subtitle-en">
+          Solution Engine is not just AI chat; it's your personal digital brain that reads your day and suggests
+          one clear, realistic step.
         </p>
         <p class="hero-lead">
           المنصة تقرأ طاقتك، وقتك، وضغطك… وبعدين تبني لك
@@ -617,21 +766,22 @@
         </p>
 
         <div class="hero-pills">
-          <div class="pill">مشروع + مهارة في نفس الوقت</div>
-          <div class="pill">خطة تتغيّر مع حياتك اليومية</div>
-          <div class="pill">موجّه شخصي، مش جواب جاهز</div>
+          <div class="pill">مشروع + مهارة في نفس الوقت · Project + Skill together</div>
+          <div class="pill">خطة تتغيّر مع حياتك اليومية · Adaptive daily plan</div>
+          <div class="pill">موجّه شخصي، مش جواب جاهز · Guided, not generic</div>
         </div>
 
         <div class="actions">
-          <button class="action-btn primary">
-            <span>🚀</span> جرّب الوصول المبكر
-          </button>
-          <button class="action-btn">
-            <span>👥</span> انضم لمجتمع Solution Engine
-          </button>
-          <button class="action-btn">
-            <span>🔔</span> احصل على آخر التحديثات
-          </button>
+          <!-- الأزرار تروح لأماكن حقيقية في الصفحة -->
+          <a href="#join" class="action-btn primary">
+            <span>🚀</span> جرّب الوصول المبكر / Early Access
+          </a>
+          <a href="#community" class="action-btn">
+            <span>👥</span> انضم للمجتمع / Join Community
+          </a>
+          <a href="#updates" class="action-btn">
+            <span>🔔</span> احصل على أهم التحديثات / Get Updates
+          </a>
         </div>
       </div>
 
@@ -641,22 +791,21 @@
           <div class="hero-card-header">
             <div>
               <div class="hero-card-title">دعوة للوصول المبكر</div>
-              <div style="font-size: 11px; color: #c3cff6;">امسح الكود أو استخدم الرابط بالأسفل</div>
+              <div style="font-size: 11px; color: #c3cff6;">
+                امسح الكود أو استخدم الرابط بالأسفل<br/>
+                Scan the QR or use the link below
+              </div>
             </div>
             <div class="hero-chip">Beta Access</div>
           </div>
 
           <div class="hero-card-body">
             <div class="qr-card">
-              <!-- ملاحظة:
-                   - لما تجهّز صورة QR حقيقية، احفظها باسم qr.png وارفعها مع index.html
-                   - ثم استبدل النص "QR Code" بالسطر التالي:
-                   <img src="qr.png" alt="QR Code للتسجيل المبكر" />
-              -->
-              QR Code
+              <!-- صورة QR فعلية من qr.png -->
+              <img src="qr.png" alt="Solution Engine QR Code" />
             </div>
             <div class="hero-card-footer">
-              <div>أو ادخل مباشرة إلى:</div>
+              <div>أو ادخل مباشرة إلى / Or visit:</div>
               <a href="https://ahmadengine.github.io/solution-engine" target="_blank" class="hero-link">
                 www.SolutionEngine.io
               </a>
@@ -669,74 +818,118 @@
     <!-- ===== About ===== -->
     <section class="section" id="about">
       <div class="section-header">
-        <div class="section-kicker">عن الفكرة</div>
+        <div class="section-kicker">عن الفكرة · About</div>
         <h2 class="section-title">ليش Solution Engine مختلف؟</h2>
+        <h3 class="section-title-en">Why is Solution Engine different?</h3>
         <p class="section-subtitle">
           مش منصّة أفكار، ولا كورس، ولا شات مع ذكاء اصطناعي… بل Engine كامل ينبني على حياتك وظروفك.
+          <br/>
+          Not just ideas or courses or random AI replies, but a personal engine built around your real life.
         </p>
       </div>
 
       <div class="cards">
         <div class="card">
           <div class="card-icon">🧠</div>
-          <h3>يفهم حالتك اليوم</h3>
+          <h3>يفهم حالتك اليوم · Understands your day</h3>
           <p>
-            بدل ما يعطيك خطة ثابتة، Solution Engine يقرأ وضعك الحالي: كمية الوقت اللي معك،
-            طاقتك النفسية والجسدية، مستوى الضغط، وشو تقدر تنجز فعليًا اليوم.
+            يقرأ وضعك الحالي: الوقت المتاح، الطاقة، مستوى الضغط… ويترجمها لخطة واقعية.
+            <br/>
+            It reads your time, energy and stress level, then converts them into a realistic plan.
           </p>
         </div>
         <div class="card">
           <div class="card-icon">📌</div>
-          <h3>مشروع يناسب مستواك</h3>
+          <h3>مشروع يناسب مستواك · Project at your level</h3>
           <p>
-            ما في مشروع واحد لكل الناس؛ النظام يختار نوع المشروع حسب مهاراتك،
-            خبرتك، ومستوى التزامك، ويمشي معك من بداية بسيطة لحد ما توصل لشيء أكبر.
+            ما في مشروع واحد للجميع؛ كل مستخدم يحصل على مسار يناسب مهاراته والتزامه.
+            <br/>
+            No single project for everyone; each user gets a path that matches their skills and commitment.
           </p>
         </div>
         <div class="card">
           <div class="card-icon">🎯</div>
-          <h3>خطوة واضحة بدل عشر أفكار</h3>
+          <h3>خطوة واضحة بدل عشر أفكار · One clear step</h3>
           <p>
-            بدل ما تغرق بأفكار وخطط، كل يوم تحصل على خطوة واحدة واضحة ومحددة:
-            "اليوم اعمل كذا"، بدون تشتّت أو حيرة.
+            بدل التشتّت… كل يوم تحصل على خطوة واحدة محددة: "اليوم اعمل كذا".
+            <br/>
+            Instead of overwhelm, you get one clear step you can actually do today.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- ===== How it works ===== -->
-    <section class="section" id="how">
+    <!-- ===== Community ===== -->
+    <section class="section" id="community">
       <div class="section-header">
-        <div class="section-kicker">كيف يعمل؟</div>
-        <h2 class="section-title">من الفوضى إلى خطّة يوم واحد</h2>
+        <div class="section-kicker">المجتمع · Community</div>
+        <h2 class="section-title">انضم لناس عندهم نفس الروح</h2>
+        <h3 class="section-title-en">Join people who think like you</h3>
         <p class="section-subtitle">
-          ثلاث خطوات فقط، وبعدها كل يوم يصير عندك "يوم مفهوم" بدل "يوم ضائع".
+          نجهّز لمساحة تجمع الأشخاص اللي بدهم يبنوا مشاريعهم خطوة خطوة، بدون ضياع.
+          <br/>
+          We are designing a space for people who want to build projects step by step, without feeling lost.
         </p>
       </div>
 
-      <div class="steps">
-        <div class="step">
-          <div class="step-number">1</div>
-          <div class="step-title">تشاركنا صورة يومك</div>
-          <p class="step-text">
-            تجاوب على أسئلة بسيطة: كم معك وقت اليوم؟ كيف طاقتك؟ عندك ضغط؟
-            شو هدفك الأقرب حالياً؟ ما تحتاج تكتب مقالات طويلة.
+      <div class="cards">
+        <div class="card">
+          <div class="card-icon">💬</div>
+          <h3>Community Space</h3>
+          <p>
+            قناة مجتمع (Discord / Telegram) يتم إطلاقها مع أول نسخة من المنصة، لمشاركة التقدّم اليومي والتحديات.
+            <br/>
+            A community channel (Discord/Telegram) launching with early access to share daily progress and challenges.
           </p>
         </div>
-        <div class="step">
-          <div class="step-number">2</div>
-          <div class="step-title">المحرّك يحلل ويختار</div>
-          <p class="step-text">
-            المحرك يحوّل إجاباتك إلى حالة رقمية، ويختار تلقائياً:
-            نوع المشروع المناسب لمستواك، ونوع المهارة اللي تحتاجها في هذه المرحلة.
+        <div class="card">
+          <div class="card-icon">🤝</div>
+          <h3>Support & Accountability</h3>
+          <p>
+            ناس تذكّرك بهدفك، وتشاركك الرحلة بدل ما تحس إنك تشتغل لحالك.
+            <br/>
+            People to support you, keep you accountable, and share the journey.
           </p>
         </div>
-        <div class="step">
-          <div class="step-number">3</div>
-          <div class="step-title">خطة اليوم الجاهزة</div>
-          <p class="step-text">
-            في النهاية، يقدّم لك خطة اليوم: مشروع تستمر فيه، مهارة تطوّرها، وخطوة عملية واحدة
-            قابلة للتنفيذ الآن، مهما كان وضعك.
+      </div>
+
+      <div class="pill-list">
+        <span class="pill-tag">Group Progress Check-ins</span>
+        <span class="pill-tag">Idea Sharing</span>
+        <span class="pill-tag">Skill Challenges</span>
+      </div>
+    </section>
+
+    <!-- ===== Updates ===== -->
+    <section class="section" id="updates">
+      <div class="section-header">
+        <div class="section-kicker">التحديثات · Updates</div>
+        <h2 class="section-title">ابقَ قريب من تطور المشروع</h2>
+        <h3 class="section-title-en">Stay close to how the product grows</h3>
+        <p class="section-subtitle">
+          إشعارات بالإطلاق التجريبي، التحديثات المهمة، وأفكار جديدة قبل تطبيقها.
+          <br/>
+          Get notified about beta launch, important updates and new ideas before they go live.
+        </p>
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <div class="card-icon">📨</div>
+          <h3>Early Access Newsletter</h3>
+          <p>
+            كل فترة نرسل رسالة قصيرة تلخص التطورات، والأسئلة اللي نحتاج رأيك فيها.
+            <br/>
+            Short, focused emails summarizing what’s new and what we need your feedback on.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🧪</div>
+          <h3>Experimental Features</h3>
+          <p>
+            المشتركين الأوائل هم أول ناس يجربوا ميزات جديدة، قبل أي أحد.
+            <br/>
+            Early members get to try experimental features before anyone else.
           </p>
         </div>
       </div>
@@ -745,42 +938,94 @@
     <!-- ===== Join / Form ===== -->
     <section class="section" id="join">
       <div class="section-header">
-        <div class="section-kicker">الوصول المبكر</div>
+        <div class="section-kicker">الوصول المبكر · Early Access</div>
         <h2 class="section-title">سجّل اهتمامك لتكون من الأوائل</h2>
+        <h3 class="section-title-en">Sign up to be among the first</h3>
         <p class="section-subtitle">
-          اترك بياناتك، وعند الإطلاق التجريبي سنرسل لك رابط التسجيل قبل الجميع.
+          اترك بياناتك ليصلك رابط التسجيل عند الإطلاق التجريبي.
+          <br/>
+          Leave your details and we’ll send you the early access link once we’re ready.
         </p>
       </div>
 
       <div class="form-card">
-        <!-- حاليا الفورم شكلي فقط (لا يرسل البيانات) -->
-        <form action="#" method="post">
-          <div class="form-row">
-            <label class="form-label" for="name">الاسم الكامل</label>
-            <input class="form-input" id="name" name="name" type="text" placeholder="مثال: أحمد رياض" />
+        <form id="earlyAccessForm" action="https://formspree.io/f/mzznvlan" method="POST">
+          <input type="hidden" name="_subject" value="New Early Access Request from Solution Engine" />
+
+          <div class="form-grid">
+            <div class="form-row">
+              <label class="form-label" for="name">
+                الاسم الكامل <span class="label-en">/ Full Name</span>
+              </label>
+              <input class="form-input" id="name" name="name" type="text" placeholder="مثال: أحمد رياض / e.g. Ahmad Riyad" required />
+            </div>
+
+            <div class="form-row">
+              <label class="form-label" for="email">
+                البريد الإلكتروني <span class="label-en">/ Email</span>
+              </label>
+              <input class="form-input" id="email" name="email" type="email" placeholder="example@email.com" required />
+            </div>
+
+            <div class="form-row">
+              <label class="form-label" for="country">
+                الدولة <span class="label-en">/ Country</span>
+              </label>
+              <input class="form-input" id="country" name="country" type="text" placeholder="Jordan, KSA, UAE, ..." />
+            </div>
+
+            <div class="form-row">
+              <label class="form-label" for="language">
+                اللغة المفضّلة للتواصل <span class="label-en">/ Preferred Language</span>
+              </label>
+              <select class="form-select" id="language" name="language">
+                <option value="Arabic">العربية / Arabic</option>
+                <option value="English">English</option>
+                <option value="Both">كلاهما / Both</option>
+              </select>
+            </div>
+
+            <div class="form-row">
+              <label class="form-label" for="focus">
+                أهم شيء تهتم تطوّره الآن <span class="label-en">/ What do you want to improve?</span>
+              </label>
+              <input class="form-input" id="focus" name="focus" type="text" placeholder="مشروع جانبي، مهارة كتابة، تنظيم وقت، ..." />
+            </div>
+
+            <div class="form-row">
+              <label class="form-label" for="time">
+                كم ساعة تقدر تشتغل على نفسك بالأسبوع؟ <span class="label-en">/ Hours per week you can commit</span>
+              </label>
+              <input class="form-input" id="time" name="time" type="text" placeholder="e.g. 3–5 hours" />
+            </div>
+
+            <div class="form-row" style="grid-column: 1 / -1;">
+              <label class="form-label" for="message">
+                احكِ لنا عن طموحك أو فكرتك <span class="label-en">/ Tell us briefly about your idea or goal</span>
+              </label>
+              <textarea class="form-textarea" id="message" name="message" placeholder="اكتب باختصار: انت وين اليوم؟ وشو حاب توصل؟ / Where are you now and what do you want to reach?"></textarea>
+            </div>
           </div>
 
-          <div class="form-row">
-            <label class="form-label" for="email">البريد الإلكتروني</label>
-            <input class="form-input" id="email" name="email" type="email" placeholder="example@email.com" />
-          </div>
+          <div class="form-footer-row">
+            <label class="checkbox-row">
+              <input type="checkbox" name="updates" value="yes" checked />
+              <span>
+                أوافق على استلام رسائل حول التحديثات والنسخة التجريبية فقط.<br/>
+                I agree to receive emails about important updates and beta access only.
+              </span>
+            </label>
 
-          <div class="form-row">
-            <label class="form-label" for="focus">أكثر شيء تهتم تطوّره الآن</label>
-            <input class="form-input" id="focus" name="focus" type="text" placeholder="مثال: مشروع جانبي – مهارة كتابة – تنظيم وقت" />
-          </div>
+            <button type="submit" class="form-submit">
+              أرسل اهتمامك الآن · Submit your interest
+            </button>
 
-          <div class="form-row">
-            <label class="form-label" for="message">احكِ لنا عن طموحك أو فكرتك</label>
-            <textarea class="form-textarea" id="message" name="message" placeholder="اكتب باختصار: انت وين اليوم؟ وشو حاب توصل؟"></textarea>
             <p class="form-note">
-              لاحقاً سيتم ربط هذا النموذج بنظام حقيقي لاستقبال الطلبات وحفظها في قاعدة بيانات أو Google Sheets.
+              بياناتك تُستخدم فقط للتواصل حول Solution Engine ولن تُشارك مع أي طرف آخر.
+              <br/>
+              Your data is used only to contact you about Solution Engine. No spam, no sharing.
             </p>
           </div>
-
-          <button type="submit" class="form-submit">
-            أرسل اهتمامك الآن
-          </button>
         </form>
       </div>
     </section>
@@ -788,18 +1033,63 @@
     <!-- ===== Footer ===== -->
     <footer class="footer">
       <div>
-        © <span id="year"></span> Solution Engine — جميع الحقوق محفوظة.
+        © <span id="year"></span> Solution Engine — جميع الحقوق محفوظة / All rights reserved.
       </div>
       <div>
-        صُنع بحب بواسطة أحمد رياض ·
+        صُنع بحب بواسطة أحمد رياض · Built with passion by Ahmad Riyad ·
         <a href="https://github.com/ahmadengine" target="_blank">GitHub @ahmadengine</a>
       </div>
     </footer>
   </div>
 
   <script>
-    // تحديث سنة الفوتر تلقائياً
+    // تحديث سنة الفوتر
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // إرسال الفورم عبر AJAX لعرض Popup الشكر
+    const form = document.getElementById("earlyAccessForm");
+    const popup = document.getElementById("thankPopup");
+    const closePopupBtn = document.getElementById("closePopupBtn");
+
+    if (form) {
+      form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+
+        try {
+          const response = await fetch(form.action, {
+            method: "POST",
+            body: formData,
+            headers: { "Accept": "application/json" }
+          });
+
+          if (response.ok) {
+            form.reset();
+            popup.style.display = "flex";
+          } else {
+            alert("حدث خطأ أثناء الإرسال، جرّب مرة أخرى.\nThere was an error, please try again.");
+          }
+        } catch (err) {
+          alert("تعذّر الاتصال بالخادم.\nCould not reach the server.");
+        }
+      });
+    }
+
+    if (closePopupBtn) {
+      closePopupBtn.addEventListener("click", function () {
+        popup.style.display = "none";
+      });
+    }
+
+    // إغلاق البوب أب عند الضغط على الخلفية
+    if (popup) {
+      popup.addEventListener("click", function (e) {
+        if (e.target === popup) {
+          popup.style.display = "none";
+        }
+      });
+    }
   </script>
 </body>
 </html>
